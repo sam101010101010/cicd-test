@@ -16,6 +16,10 @@ on:
         description: 'Tag to rollback to (required)'
         required: true
         type: string
+      project:
+        description: 'Project name (matches the {project}_tapdata_export/ directory prefix; auto-detected on push events)'
+        required: true
+        type: string
 
 jobs:
   rollback:

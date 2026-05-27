@@ -17,6 +17,10 @@ on:
           - dev
           - sit
           - lpt
+      project:
+        description: 'Project name (matches the {project}_tapdata_export/ directory prefix; auto-detected on push events)'
+        required: true
+        type: string
 
 jobs:
   deploy:
