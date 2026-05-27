@@ -1,0 +1,19 @@
+[ {
+  "collectionName" : "GroupInfo",
+  "json" : {
+    "description" : "",
+    "gitInfo" : {
+      "branch" : "main",
+      "repoUrl" : "https://github.com/sam101010101010/cicd-test.git"
+    },
+    "id" : "6a16bc3f8dbe20fa27d189e6",
+    "name" : "test",
+    "resetTaskList" : [ ],
+    "resourceItemList" : [ {
+      "id" : "6a16987727e9ba51acac618b",
+      "name" : "Task 1",
+      "type" : "SYNC_TASK"
+    } ],
+    "user_id" : "62bc5008d4958d013d97c7a6"
+  }
+} ]
