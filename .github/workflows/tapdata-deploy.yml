@@ -18,16 +18,17 @@ on:
           - sit
           - lpt
       project:
-        description: 'Project name (matches the {project}_tapdata_export/ directory prefix; auto-detected on push events)'
-        required: true
+        description: 'Project name (留空则取 vars.PROJECT_NAME，再回落到仓库名)'
+        required: false
         type: string
+        default: ''
 
 jobs:
   deploy:
     # TODO: Replace {WORKER_REPO} with actual org/repo, e.g. your-org/tapdata-cicd-worker
     uses: "sam101010101010/cicd-worker/.github/workflows/tapdata-deploy.yml@main"
     with:
-      project: ${{ github.event.repository.name }}
+      project: ${{ inputs.project || vars.PROJECT_NAME || github.event.repository.name }}
       target_env: ${{ inputs.target_env || '' }}
       caller_repo: ${{ github.repository }}
       caller_sha: ${{ github.sha }}
