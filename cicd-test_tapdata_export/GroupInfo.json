@@ -6,13 +6,21 @@
       "branch" : "main",
       "repoUrl" : "https://github.com/sam101010101010/cicd-test.git"
     },
-    "id" : "6a389aa6af105f411234416e",
+    "id" : "6a38a2cdaf105f411234427d",
     "name" : "cicd-test",
     "resetTaskList" : [ ],
     "resourceItemList" : [ {
       "id" : "6a16987727e9ba51acac618b",
       "name" : "Task 1",
       "type" : "SYNC_TASK"
+    }, {
+      "id" : "6a38a0ffaf105f4112344172",
+      "name" : "Task 2",
+      "type" : "MIGRATE_TASK"
+    }, {
+      "id" : "6a38a2c0af105f411234427c",
+      "name" : "policy",
+      "type" : "MODULE"
     } ],
     "user_id" : "62bc5008d4958d013d97c7a6"
   }
