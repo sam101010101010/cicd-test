@@ -6,7 +6,7 @@
       "branch" : "main",
       "repoUrl" : "https://github.com/sam101010101010/cicd-test.git"
     },
-    "id" : "6a336bdd6e6de63fb9980607",
+    "id" : "6a389aa6af105f411234416e",
     "name" : "cicd-test",
     "resetTaskList" : [ ],
     "resourceItemList" : [ {
