@@ -1,8 +1,8 @@
 [ {
   "collectionName" : "Modules",
   "json" : {
-    "apiType" : "defaultApi",
-    "apiVersion" : "v1",
+    "apiType" : "customerQuery",
+    "apiVersion" : "v2",
     "basePath" : "policy",
     "connection" : {
       "date" : 1779865707000,
@@ -11,7 +11,7 @@
     "connectionId" : "6a16986b27e9ba51acac6181",
     "connectionName" : "mongo",
     "connectionType" : "MongoDB",
-    "createTime" : 1782096576978,
+    "createTime" : 1782101817357,
     "createUser" : "admin@admin.com",
     "datasource" : "6a16986b27e9ba51acac6181",
     "fields" : [ {
@@ -184,14 +184,13 @@
       "unique" : false,
       "useDefaultValue" : true
     } ],
-    "id" : "6a38a2c0af105f411234427c",
+    "id" : "6a38b739a0c4986b42203f20",
     "limit" : 0,
     "listtags" : [ {
       "id" : "6a1692d0f1bb11793ed9ff30",
       "value" : "API"
     } ],
-    "name" : "policy",
-    "operationType" : "GET",
+    "name" : "policy v2",
     "pathAccessMethod" : "customize",
     "pathSetting" : [ {
       "method" : "POST",
@@ -269,21 +268,21 @@
       }, {
         "autoincrement" : "NO",
         "columnPosition" : 8,
-        "data_type" : "DECIMAL128",
+        "data_type" : "DATE_TIME",
         "default_value" : null,
-        "field_name" : "last_ann_premium_gross",
-        "id" : "6a16986b27e9ba51acac6181_policy_last_ann_premium_gross",
+        "field_name" : "last_change",
+        "id" : "6a16986b27e9ba51acac6181_policy_last_change",
         "is_auto_allowed" : true,
         "is_deleted" : false,
         "is_nullable" : true,
-        "originalDataType" : "DECIMAL128",
-        "original_field_name" : "last_ann_premium_gross",
-        "previousDataType" : "DECIMAL128",
-        "previousFieldName" : "last_ann_premium_gross",
+        "originalDataType" : "DATE_TIME",
+        "original_field_name" : "last_change",
+        "previousDataType" : "DATE_TIME",
+        "previousFieldName" : "last_change",
         "primaryKey" : false,
         "source" : "auto",
         "sourceDbType" : "MongoDB",
-        "tapType" : "{\"fixed\":true,\"maxValue\":1E+6145,\"minValue\":-1E+6145,\"precision\":30,\"scale\":10,\"type\":8}",
+        "tapType" : "{\"defaultFraction\":3,\"fraction\":3,\"max\":\"9999-12-31T23:59:59.999Z\",\"min\":\"1000-01-01T00:00:00.001Z\",\"type\":1}",
         "unique" : false,
         "useDefaultValue" : true
       }, {
@@ -300,26 +299,6 @@
         "original_field_name" : "policy_id",
         "previousDataType" : "STRING(100)",
         "previousFieldName" : "policy_id",
-        "primaryKey" : false,
-        "source" : "auto",
-        "sourceDbType" : "MongoDB",
-        "tapType" : "{\"bytes\":100,\"type\":10}",
-        "unique" : false,
-        "useDefaultValue" : true
-      }, {
-        "autoincrement" : "NO",
-        "columnPosition" : 8,
-        "data_type" : "STRING(100)",
-        "default_value" : null,
-        "field_name" : "policy_status",
-        "id" : "6a16986b27e9ba51acac6181_policy_policy_status",
-        "is_auto_allowed" : true,
-        "is_deleted" : false,
-        "is_nullable" : true,
-        "originalDataType" : "STRING(100)",
-        "original_field_name" : "policy_status",
-        "previousDataType" : "STRING(100)",
-        "previousFieldName" : "policy_status",
         "primaryKey" : false,
         "source" : "auto",
         "sourceDbType" : "MongoDB",
@@ -348,8 +327,7 @@
         "useDefaultValue" : true
       } ],
       "fullCustomQuery" : false,
-      "method" : "GET",
-      "name" : "findPage",
+      "name" : "customerQuery",
       "params" : [ {
         "defaultvalue" : "1",
         "description" : "Pagination number",
@@ -364,16 +342,26 @@
         "type" : "number"
       }, {
         "defaultvalue" : "",
-        "description" : "Filter Condition",
-        "name" : "filter",
+        "description" : "Filter Fields",
+        "name" : "fields",
         "required" : false,
-        "type" : "object"
+        "type" : "array: string"
+      }, {
+        "defaultvalue" : "",
+        "description" : "",
+        "name" : "id",
+        "required" : false,
+        "type" : "string"
       } ],
-      "path" : "",
       "result" : "Page<Document>",
       "sort" : [ ],
-      "type" : "preset",
-      "where" : [ ]
+      "type" : "customerQuery",
+      "where" : [ {
+        "condition" : "and",
+        "fieldName" : "policy_id",
+        "operator" : "==",
+        "parameter" : "id"
+      } ]
     } ],
     "prefix" : "",
     "readConcern" : "",
